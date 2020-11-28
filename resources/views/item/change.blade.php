@@ -11,3 +11,13 @@
 <input type="submit" value="{{__('Change the products parameters')}}">
 <input type="hidden" name="id" value="{{$item->id}}">
 </form>
+<br>
+@if (count($errors)>0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif

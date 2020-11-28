@@ -29,5 +29,15 @@
     "We were unable to find a registered user with this email address.": "We were unable to find a registered user with this email address.",
     "You are receiving this email because we received a password reset request for your account.": "Ovaj e-mail Vam je poslat jer ste zahtjevali promjenu zaporke za vaš nalog.",
     "You may not delete your personal team.": "You may not delete your personal team.",
-    "You may not leave a team that you created.": "You may not leave a team that you created."
+    "You may not leave a team that you created.": "You may not leave a team that you created.",
+    "Enter the english name":"Unesite engleski naziv",
+    "Enter the english description":"Unesite engleski opis",
+    "Enter the croatian name":"Unesite hrvatski naziv",
+    "Enter the croatian description":"Unesite hrvatski opis",
+    "New product":"Novi proizvod",
+    "Change":"Promjeni",
+    "Delete":"Izbriši",
+    "Are you sure you want to delete":"Jeste li sigurni da želite obrisati",
+    "Enter the price":"Unesite cijenu proizvoda",
+    "Add a new product":"Dodaj novi proizvod"
 }

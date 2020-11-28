@@ -40,6 +40,7 @@ class ItemController extends Controller
             $item->update(['path'=>$name]);
         }
 
+        $item->update(['price'=>$request->price]);
         $item->itemTranslation()->whereLocale($lang)->update([
             'name'=>$request->name,
             'description'=>$request->description
@@ -47,8 +48,56 @@ class ItemController extends Controller
 
         return redirect('/items');
         
-      //  return view('test',compact('item'));
+    }
+
+    public function new()
+    {
+        $item=new Item;
+        $item->save();
+        return view('item.new',compact('item'));
+    }
+
+    public function create(Request $request)
+    {
+        $item=Item::findorFail($request->id);
+
+        $validatedData=$request->validate([
+            'enname'=>'required',
+            'endescription'=>'required',
+            'hrname'=>'required',
+            'hrdescription'=>'required',
+            'pic'=>'required | image',
+            'price'=>'required'
+        ]);
+
+        if($request->hasFile('pic')){
+            $pic=$request->file('pic');
+            $name=$pic->getClientOriginalName();
+            $pic->move('images\products',$name);
+            $item->update(['path'=>$name]);
+        }
+
+        $item->update(['price'=>$request->price]);
+        $item->itemTranslation()->create([
+            'locale'=>'en',
+            'name'=>$request->enname,
+            'description'=>$request->endescription,
+            ]);
         
+        $item->itemTranslation()->create([
+            'locale'=>'hr',
+            'name'=>$request->hrname,
+            'description'=>$request->hrdescription,
+        ]);
+        return redirect('/items');
+    }
+
+    public function delete($id)
+    {
+        $item=Item::findorFail($id);
+        $item->itemTranslation()->delete();
+        $item->delete();
+        return redirect('/items');
     }
 
     public function test(Request $request)

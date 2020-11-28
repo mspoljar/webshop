@@ -29,5 +29,8 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/item/change/{id}',[ItemController::class, 'change']);
     Route::post('/item/update',[ItemController::class,'update']);
     Route::get('/test',[ItemController::class, 'test']);
+    Route::get('/item/new', [ItemController::class, 'new']);
+    Route::post('/item/create', [ItemController::class, 'create']);
+    Route::get('/item/delete/{id}', [ItemController::class, 'delete']);
 });
 

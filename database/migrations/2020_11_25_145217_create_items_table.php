@@ -15,8 +15,8 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->string('path');
-            $table->decimal('price',10,2);
+            $table->string('path')->nullable();
+            $table->decimal('price',10,2)->nullable();
             $table->foreignId('category_id')->nullable();
             $table->timestamps();
         });
