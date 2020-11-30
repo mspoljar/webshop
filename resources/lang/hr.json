@@ -39,5 +39,8 @@
     "Delete":"Izbriši",
     "Are you sure you want to delete":"Jeste li sigurni da želite obrisati",
     "Enter the price":"Unesite cijenu proizvoda",
-    "Add a new product":"Dodaj novi proizvod"
+    "Add a new product":"Dodaj novi proizvod",
+    "Products":"Proizvodi",
+    "Categories":"Kategorije",
+    "New category":"Nova kategorija"
 }

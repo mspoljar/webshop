@@ -13,8 +13,14 @@ class Category extends Model implements TranslatableContract
     use HasFactory;
     use Translatable;
 
-    public $translatedAtributes = [
+    public $translatedAttributes = [
         'name',
     ];
 
+    protected $fillable=['path'];
+
+    public function categoryTranslation()
+    {
+       return $this->hasMany('App\Models\CategoryTranslation');
+    }
 }

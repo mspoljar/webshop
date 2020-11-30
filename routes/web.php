@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,11 @@ Route::group(['middleware'=>'web'],function(){
     Route::get('/item/new', [ItemController::class, 'new']);
     Route::post('/item/create', [ItemController::class, 'create']);
     Route::get('/item/delete/{id}', [ItemController::class, 'delete']);
+    Route::get('/category', [CategoryController::class, 'index']);
+    Route::get('/category/new',[CategoryController::class, 'new']);
+    Route::post('/category/create', [CategoryController::class, 'create']);
+    Route::get('/category/change/{id}',[CategoryController::class, 'change']);
+    Route::post('/category/update',[CategoryController::class,'update']);
+    Route::get('/category/delete/{id}',[CategoryController::class, 'delete']);
 });
 
